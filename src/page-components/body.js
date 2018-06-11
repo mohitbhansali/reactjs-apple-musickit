@@ -15,11 +15,11 @@ class Body extends Component {
         })
     }
     render() {
-        return <div >
-            {
-                this.props.isLogin && window.location.pathname!=='/albums' &&
-                <Redirect to="/albums"/>
-            }
+        {/*
+         {
+         this.props.isLogin && window.location.pathname!=='/albums' &&
+         {/*<Redirect to="/albums"/>*/}
+        return <div>
             <Route path="/albums" exact render={(props) => {
                 return <Albums albumsProvider={this.props.albumsProvider} />
             }}/>

@@ -4,6 +4,7 @@
     <list default="true" id="44938733-a565-4cc6-9b62-be91d6948d3f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/App.css" afterPath="$PROJECT_DIR$/src/css/App.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page-components/body.js" afterPath="$PROJECT_DIR$/src/page-components/body.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/albums/player.js" afterPath="$PROJECT_DIR$/src/pages/albums/player.js" />
     </list>
@@ -33,8 +34,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+            <state relative-caret-position="210">
+              <caret line="14" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -42,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="body.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="524">
+              <caret line="316" column="1" lean-forward="false" selection-start-line="316" selection-start-column="1" selection-end-line="316" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="body.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page-components/body.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+            <state relative-caret-position="225">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <element signature="e#49#88#0" expanded="true" />
               </folding>
@@ -57,8 +68,8 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/albums/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding>
                 <element signature="e#49#88#0" expanded="true" />
               </folding>
@@ -66,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="player.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="59" />
+            <state relative-caret-position="2232">
+              <caret line="205" column="43" lean-forward="false" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#49#88#0" expanded="true" />
@@ -82,11 +93,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/albums/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="77" column="73" lean-forward="false" selection-start-line="77" selection-start-column="73" selection-end-line="77" selection-end-column="73" />
+            <state relative-caret-position="230">
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="21" />
               <folding>
                 <element signature="e#49#88#0" expanded="true" />
-                <element signature="e#370#1901#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -145,6 +155,12 @@
       <find>user.sv</find>
       <find>../../assets/images/addToLib-2b3fdfdfd61a94c2ab0fd2eba6054437.png</find>
       <find>_blank</find>
+      <find>player</find>
+      <find>console.l</find>
+      <find>console.`</find>
+      <find>console.log</find>
+      <find>console.</find>
+      <find>isPlaying</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -162,13 +178,13 @@
         <option value="$PROJECT_DIR$/src/page-components/Body.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/css/App.css" />
         <option value="$PROJECT_DIR$/src/css/Player.css" />
         <option value="$PROJECT_DIR$/src/pages/albums/index.js" />
         <option value="$PROJECT_DIR$/src/pages/albums/detail.js" />
-        <option value="$PROJECT_DIR$/src/pages/albums/player.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/page-components/body.js" />
+        <option value="$PROJECT_DIR$/src/css/App.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/pages/albums/player.js" />
       </list>
     </option>
   </component>
@@ -443,12 +459,12 @@
       <workItem from="1528651272362" duration="3987000" />
       <workItem from="1528683294657" duration="147000" />
       <workItem from="1528683508627" duration="8000" />
-      <workItem from="1528683638189" duration="33591000" />
+      <workItem from="1528683638189" duration="43944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40105000" />
+    <option name="totallyTimeSpent" value="50458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1107" extended-state="6" />
@@ -580,14 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="312" column="1" lean-forward="false" selection-start-line="312" selection-start-column="1" selection-end-line="312" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -600,14 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -660,21 +660,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/albums/index.js">
+    <entry file="file://$PROJECT_DIR$/src/css/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="77" column="73" lean-forward="false" selection-start-line="77" selection-start-column="73" selection-end-line="77" selection-end-column="73" />
+        <state relative-caret-position="524">
+          <caret line="316" column="1" lean-forward="false" selection-start-line="316" selection-start-column="1" selection-end-line="316" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page-components/body.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="e#49#88#0" expanded="true" />
-            <element signature="e#370#1901#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/albums/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="e#49#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/albums/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="90">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#49#88#0" expanded="true" />
           </folding>
@@ -683,30 +718,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="59" />
+        <state relative-caret-position="2232">
+          <caret line="205" column="43" lean-forward="false" selection-start-line="205" selection-start-column="43" selection-end-line="205" selection-end-column="43" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#49#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page-components/body.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-          <folding>
             <element signature="e#49#88#0" expanded="true" />
           </folding>
         </state>

@@ -311,3 +311,7 @@ p {
     float: left;
     color: #FE2851;
 }
+#player {
+    height: 450px;
+    width: 660px;
+}

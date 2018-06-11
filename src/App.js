@@ -12,7 +12,7 @@ class AlbumsProvider {
     *fetchAlbums() {
         if(this.musicInstance.api.library) {
             this.albums = yield this.musicInstance.api.library.albums("",{});
-            console.log(this.albums);
+            //console.log(this.albums);
             if(this.callbacks){
                 this.callbacks.forEach((func)=>{
                     func.call()
@@ -24,7 +24,7 @@ class AlbumsProvider {
     *fetchAlbumDetails(id) {
         if(this.musicInstance.api.library) {
             this.albumDetails = yield this.musicInstance.api.library.album(id);
-            console.log(this.albumDetails);
+            //console.log(this.albumDetails);
             if(this.callbacks){
                 this.callbacks.forEach((func)=>{
                     func.call()
