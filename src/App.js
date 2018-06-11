@@ -13,12 +13,12 @@ class AlbumsProvider {
         this.albums = [];
         if(this.musicInstance.api.library) {
             this.albums = yield this.musicInstance.api.library.albums("",{});
-        }
-        console.log(this.albums);
-        if(this.callbacks){
-            this.callbacks.forEach((func)=>{
-                func.call()
-            });
+            console.log(this.albums);
+            if(this.callbacks){
+                this.callbacks.forEach((func)=>{
+                    func.call()
+                });
+            }
         }
     }
 
@@ -26,12 +26,12 @@ class AlbumsProvider {
         this.albumDetails = [];
         if(this.musicInstance.api.library) {
             this.albumDetails = yield this.musicInstance.api.library.album(id);
-        }
-        console.log(this.albumDetails);
-        if(this.callbacks){
-            this.callbacks.forEach((func)=>{
-                func.call()
-            });
+            console.log(this.albumDetails);
+            if(this.callbacks){
+                this.callbacks.forEach((func)=>{
+                    func.call()
+                });
+            }
         }
     }
 
