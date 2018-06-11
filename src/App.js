@@ -10,7 +10,6 @@ class AlbumsProvider {
         this.musicInstance = musicInstance;
     }
     *fetchAlbums() {
-        this.albums = [];
         if(this.musicInstance.api.library) {
             this.albums = yield this.musicInstance.api.library.albums("",{});
             console.log(this.albums);
@@ -23,7 +22,6 @@ class AlbumsProvider {
     }
 
     *fetchAlbumDetails(id) {
-        this.albumDetails = [];
         if(this.musicInstance.api.library) {
             this.albumDetails = yield this.musicInstance.api.library.album(id);
             console.log(this.albumDetails);
@@ -46,11 +44,15 @@ class AlbumsProvider {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {genres:[], albums:[]};
+        this.state = {isLogin: false, genres:[], albums:[]};
         this.musicInstance = this.props.musicInstance;
-        this.signIn();
         //this.loadGenres();
         this.setupAlbumsProvider(this.musicInstance);
+    }
+    componentWillMount() {
+        if(this.musicInstance.isAuthorized) {
+            this.setState({isLogin: true});
+        }
     }
     loadGenres() {
         let that = this;
@@ -70,10 +72,17 @@ class App extends Component {
         });
     }
     signIn() {
-        this.musicInstance.authorize();
+        this.musicInstance.authorize((key) => {
+            console.log(key);
+            if(key) {
+                this.setState({isLogin: true});
+            }
+        });
     }
     signOut() {
-        this.musicInstance.unauthorize();
+        this.musicInstance.unauthorize(() => {
+            this.setState({isLogin: false});
+        });
     }
     render() {
         return (
@@ -87,16 +96,22 @@ class App extends Component {
                         </div>
                         <div className="" id="">
                             <ul className="nav navbar-nav navbar-right">
-                                <li>
-                                    <a onClick={this.signIn.bind(this)}>
-                                        <span>Sign In</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a onClick={this.signOut.bind(this)}>
-                                        <span>Sign Out</span>
-                                    </a>
-                                </li>
+                                {
+                                    !this.state.isLogin &&
+                                    <li>
+                                        <a onClick={this.signIn.bind(this)}>
+                                            <span>Sign In</span>
+                                        </a>
+                                    </li>
+                                }
+                                {
+                                    this.state.isLogin &&
+                                    <li>
+                                        <a onClick={this.signOut.bind(this)}>
+                                            <span>Sign Out</span>
+                                        </a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -115,7 +130,7 @@ class App extends Component {
                             </a>
                         </div>
                         <Router>
-                            <Body albumsProvider={this.albumsProvider} />
+                            <Body isLogin={this.state.isLogin} albumsProvider={this.albumsProvider} />
                         </Router>
                     </div>
                 </div>

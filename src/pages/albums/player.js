@@ -12,14 +12,16 @@ class Player extends Component {
         console.log("Props",this.musicInstance);
     }
 
-    action(action) {
-        console.log(action);
-        console.log("Details",this.albumProvider.albumDetails);
-        console.log(this.musicInstance.setQueue);
-        this.musicInstance.setQueue({ album: this.albumProvider.albumDetails.id, startPosition: this.albumProvider.albumDetails.attributes.trackCount }).then((queue) => {
+    action(action,track) {
+        console.log(track.attributes.trackNumber);
+        this.musicInstance.setQueue({ album: this.albumProvider.albumDetails.id }).then((queue) => {
             console.log("queue in inititated", queue);
+            queue.position = track.attributes.trackNumber;
             switch (action) {
                 case "play":
+                    if(this.musicInstance.player.isPlaying) {
+                        this.musicInstance.stop();
+                    }
                     this.musicInstance.play();
                     break;
                 case "pause":
@@ -50,9 +52,12 @@ class Player extends Component {
                     <button className="song__heading__logo">
                         <span className="logo"></span>
                     </button>
-                    <button className="song__heading__auth">
-                        Sign In
-                    </button>
+                    {
+                        !this.musicInstance.isAuthorized &&
+                        <button className="song__heading__auth">
+                            Sign In
+                        </button>
+                    }
                 </div>
 
                 <div className="song__body">
@@ -80,20 +85,6 @@ class Player extends Component {
                 </div>
             </div>
 
-            <div className="logout-modal hide ">
-                <div className="logout-modal__overlay"></div>
-                <button className="logout-modal__close"></button>
-                <div className="logout-modal__bg">
-                    <div className="logout-modal__content">
-                        <div className="logout-modal__icon"></div>
-                        <div className="logout-modal__container">
-                            <p className="logout-modal__message">You are signed in to Apple&nbsp;Music.</p>
-                            <button className="logout-modal__button">Sign Out</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div className="error-modal hide">
                 <div className="error-modal__overlay"></div>
                 <button className="error-modal__close"></button>
@@ -116,7 +107,7 @@ class Player extends Component {
                         this.albumProvider.albumDetails.relationships &&
                         this.albumProvider.albumDetails.relationships.tracks.data.map((track, index)=>{
                             console.log(track);
-                            return <li key={index} className="tracklist__track" onClick={this.action.bind(this, 'play')}>
+                            return <li key={index} className="tracklist__track" onClick={this.action.bind(this, 'play', track)}>
                                 <span className="tracklist__track__num">
                                     {++index}
                                 </span>
@@ -133,93 +124,11 @@ class Player extends Component {
                     }
                 </ul>
 
-                <div className="tracklist__footer">
-                    <div className="tracklist__footer__duration">
-                        7 Songs,
-
-                        23 Minutes
-                    </div>
-                    <div className="tracklist__footer__release">
-                        Released: June 8, 2018
-                    </div>
-                    <div className="tracklist__footer__copyright">
-                        ℗ 2018 Getting Out Our Dreams II, LLC Distributed By Def Jam,  A Division of UMG Recordings, Inc.
-                    </div>
-                </div>
-
                 <div className="tracklist__upsell">
                     <div className="tracklist__upsell__logo"></div>
-                    <div className="tracklist__upsell__copy">
-                        Play and download all the music you want.
-                    </div>
-                    <div className="tracklist__upsell__buttons">
-                        <button className="cta">
-                            Get Apple&nbsp;Music
-                        </button>
-                        <button className="login">
-                            Sign In
-                        </button>
-                    </div>
                 </div>
 
             </div>
-
-            <div className="scrollhint bottom">
-                <div className="gradient"></div>
-            </div>
-
-            <div className="tracklist-modal tracklist-modal--share hide">
-                <div className="tracklist-modal__overlay"></div>
-                <button className="tracklist-modal__close"></button>
-                <div className="tracklist-modal__bg">
-                    <div className="tracklist-modal__content">
-                        <input id="copy-to-clipboard" readOnly="" type="text" />
-                            <button className="button link-album">
-                            <div className="text">
-                                Copy Link to Album
-                            </div>
-                            <div className="icon"></div>
-                        </button>
-                            <button className="button embed-playlist">
-                            <div className="text">
-                                Embed Album
-                            </div>
-                            <div className="icon"></div>
-                        </button>
-                            <button className="button open-popup">
-                                <div className="text">Open in New Window</div>
-                                <div className="icon"></div>
-                            </button>
-                    </div>
-                </div>
-
-                <a className="tracklist-modal__legal" href="https://support.apple.com/kb/HT208364">See how your data is managed</a>
-            </div>
-
-            <div className="tracklist-modal tracklist-modal--upsell hide">
-                <div className="tracklist-modal__overlay"></div>
-                <button className="tracklist-modal__close"></button>
-                <div className="tracklist-modal__bg">
-                    <div className="tracklist-modal__content">
-                        <div className="tracklist-modal__logo"></div>
-                        <div className="tracklist-modal__copy">Play and download all the music you want.</div>
-                        <div className="tracklist-modal__buttons">
-                            <button className="cta">Get Apple&nbsp;Music</button>
-                            <button className="login">Sign In</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div className="toast hide " role="alert">
-                <div className="wrapper">
-                    <div className="icon "></div>
-                    <div className="text"></div>
-                </div>
-            </div>
-
 
         </div>
         </div>
