@@ -67,7 +67,7 @@ class Albums extends Component {
                                     let url = album.attributes.artwork.url;
                                     url = url.replace("{w}",w);
                                     url = url.replace("{h}",h);
-                                    return <Route path="/albums/:id" key={index} render={({history}) => {
+                                    return <Route key={index} render={({history}) => {
                                         return <a href={`/albums/${album.id}`}>
                                             <div className="result">
                                                 <div className="image album">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './assets/apple-music-logo-black.svg';
 import co from 'co';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import Body from './page-components/body';
 import './css/App.css';
 
@@ -11,7 +11,7 @@ class AlbumsProvider {
     }
     *fetchAlbums() {
         this.albums = yield this.musicInstance.api.library.albums("",{});
-        //console.log(this.albums);
+        console.log(this.albums);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
                 func.call()
@@ -21,7 +21,7 @@ class AlbumsProvider {
 
     *fetchAlbumDetails(id) {
         this.albumDetails = yield this.musicInstance.api.library.album(id);
-        //console.log(this.albumDetails);
+        console.log(this.albumDetails);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
                 func.call()
