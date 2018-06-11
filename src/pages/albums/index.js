@@ -77,7 +77,7 @@ class Albums extends Component {
                                                 <div className="title">
                                                     <div className="name"
                                                          style={{"WebkitBoxOrient": "vertical"}}>{album.attributes.name}</div>
-                                                    <img className="explicit-small" src={explicit}/>
+                                                    <img className="explicit-small" src={explicit} alt="Explicit" />
                                                 </div>
                                                 <div className="artist-name"
                                                      style={{"WebkitBoxOrient": "vertical"}}> {album.attributes.artistName} </div>

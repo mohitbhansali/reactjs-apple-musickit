@@ -2,7 +2,7 @@
  * Created by mohitbhansali on 11/06/18.
  */
 import React, {Component} from "react";
-import {Redirect, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import Albums from '../pages/albums';
 import AlbumDetail from '../pages/albums/detail';
 
@@ -16,7 +16,6 @@ class Body extends Component {
     }
     render() {
         return <div >
-            {/*<Redirect from="/" to="/albums" />*/}
             <Route path="/albums" exact render={(props) => {
                 return <Albums albumsProvider={this.props.albumsProvider} />
             }}/>

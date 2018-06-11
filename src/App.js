@@ -81,19 +81,19 @@ class App extends Component {
                 <nav className="navbar">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <a className="navbar-brand" href="#">
+                            <a className="navbar-brand" href="/">
                                 <img src={logo} alt="Apple music logo black" />
                             </a>
                         </div>
                         <div className="" id="">
                             <ul className="nav navbar-nav navbar-right">
                                 <li>
-                                    <a className="" href="#" onClick={this.signIn.bind(this)}>
+                                    <a onClick={this.signIn.bind(this)}>
                                         <span>Sign In</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="" href="#" onClick={this.signOut.bind(this)}>
+                                    <a onClick={this.signOut.bind(this)}>
                                         <span>Sign Out</span>
                                     </a>
                                 </li>

@@ -27,7 +27,6 @@ class AlbumDetail extends Component {
             <div className="intro intro-details">
                 <a className="details-back" href="/albums"><span className="appleicons">&#60;</span> Search</a>
             </div>
-
             {
                 this.props.albumsProvider.albumDetails &&
                     <div id="detailWrapper" className="album">

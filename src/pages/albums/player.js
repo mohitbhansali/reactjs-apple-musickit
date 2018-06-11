@@ -193,7 +193,7 @@ class Player extends Component {
                     </div>
                 </div>
 
-                <a className="tracklist-modal__legal" href="https://support.apple.com/kb/HT208364" target="_blank">See how your data is managed</a>
+                <a className="tracklist-modal__legal" href="https://support.apple.com/kb/HT208364">See how your data is managed</a>
             </div>
 
             <div className="tracklist-modal tracklist-modal--upsell hide">
