@@ -21,7 +21,8 @@ class Player extends Component {
         var el = this.refs.inputRangeRef;
         this.setState({
             count: (this.musicInstance.player.currentPlaybackProgress * 100),
-            timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining
+            timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining,
+            nowPlayingItem: this.musicInstance.player.nowPlayingItem
         });
         el.value = this.musicInstance.player.currentPlaybackProgress;
     }
@@ -54,10 +55,6 @@ class Player extends Component {
                 }
                 that.action('play');
             });
-            /*this.musicInstance.setQueue({ album: this.albumProvider.albumDetails.id }).then((queue) => {
-                //console.log("queue in inititated", queue, track);
-
-            })*/
         }
     }
 
@@ -70,7 +67,10 @@ class Player extends Component {
                     }
                     this.musicInstance.play();
                     this.startTimer();
-                    this.setState({isPlaying: true, timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining});
+                    this.setState({
+                        isPlaying: true,
+                        timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining
+                    });
                     break;
                 case "pause":
                     this.musicInstance.pause();
@@ -83,7 +83,6 @@ class Player extends Component {
                     this.setState({isPlaying: false});
                     break;
                 case "next":
-                    console.log(this.musicInstance.player.nowPlayingItemIndex+1);
                     this.queue.position = this.musicInstance.player.nowPlayingItemIndex+1;
                     if(this.musicInstance.player.isPlaying) {
                         this.musicInstance.stop();
@@ -127,10 +126,10 @@ class Player extends Component {
                     <div className="song__lcd">
                         <div className="song__info">
                             <div className="song__info__name name-container">
-                                <span className="name">{this.albumProvider.albumDetails.attributes.name}</span>
+                                <span className="name">{this.state.nowPlayingItem?this.state.nowPlayingItem.attributes.name:this.albumProvider.albumDetails.attributes.name}</span>
                             </div>
                             <div className="song__info__sub" title={this.albumProvider.albumDetails.attributes.artistName}>
-                                <span>{this.albumProvider.albumDetails.attributes.artistName}</span>
+                                <span>{this.state.nowPlayingItem?this.state.nowPlayingItem.albumInfo:this.albumProvider.albumDetails.attributes.artistName}</span>
                             </div>
                         </div>
 
