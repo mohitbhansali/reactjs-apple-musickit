@@ -7,10 +7,43 @@ import '../../css/Player.css';
 class Player extends Component {
     constructor(props) {
         super(props);
-        console.log("Props",this.props);
+        this.albumProvider = this.props.albumsProvider;
+        this.musicInstance = this.albumProvider.musicInstance;
+        console.log("Props",this.musicInstance);
+    }
+
+    action(action) {
+        console.log(action);
+        console.log("Details",this.albumProvider.albumDetails);
+        console.log(this.musicInstance.setQueue);
+        this.musicInstance.setQueue({ album: this.albumProvider.albumDetails.id, startPosition: this.albumProvider.albumDetails.attributes.trackCount }).then((queue) => {
+            console.log("queue in inititated", queue);
+            switch (action) {
+                case "play":
+                    this.musicInstance.play();
+                    break;
+                case "pause":
+                    this.musicInstance.pause();
+                    break;
+                case "stop":
+                    this.musicInstance.stop();
+                    break;
+                case "next":
+                    this.musicInstance.playNext();
+                    break;
+                case "previous":
+                    this.musicInstance.playLater();
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 
     render() {
+        let artworkUrl = this.albumProvider.albumDetails.attributes.artwork.url;
+        artworkUrl = artworkUrl.replace("{w}",500);
+        artworkUrl = artworkUrl.replace("{h}",500);
         return <div id="app"><div className="embed-player">
             <div className="song resting">
                 <div className="song__heading">
@@ -25,8 +58,8 @@ class Player extends Component {
                 <div className="song__body">
                     <div className="song__artwork">
                         <div className="artwork-container">
-                            <img className="artwork" src="https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/29/88/ea/2988ea5e-7f83-3d88-239f-540ce3c40309/00602567803881.rgb.jpg/500x500cc.jpeg" alt="artwork" style={{background:"#fbad7c"}} />
-                            <img className="artwork shadow" src="https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/29/88/ea/2988ea5e-7f83-3d88-239f-540ce3c40309/00602567803881.rgb.jpg/500x500cc.jpeg" alt="artwork shadow" />
+                            <img className="artwork" src={artworkUrl} alt="artwork" style={{background:"#fbad7c"}} />
+                            <img className="artwork shadow" src={artworkUrl} alt="artwork shadow" />
                         </div>
                         <div className="song__count">
                             7 Songs
@@ -34,28 +67,13 @@ class Player extends Component {
                     </div>
                     <div className="song__lcd">
                         <div className="song__info">
-
                             <div className="song__info__name name-container">
-                                <span className="name">KIDS SEE GHOSTS</span>
+                                <span className="name">{this.albumProvider.albumDetails.attributes.name}</span>
                                 <span className="badge explicit"></span>
                             </div>
                             <div className="song__info__sub" title="KIDS SEE GHOSTS, Kanye West &amp; Kid Cudi">
-                                <span>KIDS SEE GHOSTS, Kanye West &amp; Kid Cudi</span>
+                                <span>{this.albumProvider.albumDetails.attributes.artistName}</span>
                             </div>
-                        </div>
-
-                        <div className="song__controls">
-                            <div className="song__resting">
-                                <button className="song__resting__button ">
-                                    <span className="icon"></span>
-                                    <span className="text">PREVIEW</span>
-                                </button>
-                            </div>
-
-
-                            <button className="song__share">
-                                <span className="more"></span>
-                            </button>
                         </div>
                     </div>
 
@@ -94,110 +112,25 @@ class Player extends Component {
 
                 <div className="tracklist__border"></div>
                 <ul className="tracklist__tracks">
-                    <li className="tracklist__track ">
-                          <span className="tracklist__track__num">
-                              1
-                          </span>
-
-                        <span className="tracklist__track__info">
-                          <span className="tracklist__track__name name-container">
-                            <span className="name">
-                                  Feel the Love
-                                            </span>
-                            <span className="badge explicit"></span>
-                          </span>
+                    {
+                        this.albumProvider.albumDetails.relationships &&
+                        this.albumProvider.albumDetails.relationships.tracks.data.map((track, index)=>{
+                            console.log(track);
+                            return <li key={index} className="tracklist__track" onClick={this.action.bind(this, 'play')}>
+                                <span className="tracklist__track__num">
+                                    {++index}
                                 </span>
-                    </li>
-
-                    <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              2
-          </span>
-
-                        <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  Fire
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
+                                <span className="tracklist__track__info">
+                                    <span className="tracklist__track__name name-container">
+                                    <span className="name">
+                                        {track.attributes.name}
+                                    </span>
+                                    <span className="badge explicit"></span>
+                                  </span>
                                 </span>
-                    </li>
-
-                          <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              3
-          </span>
-
-                    <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  4th Dimension (feat. Louis Prima)
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
-                               </span>
-                </li>
-
-                    <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              4
-          </span>
-
-                        <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  Freeee (Ghost Town, Pt. 2)
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
-                             </span>
-                    </li>
-
-                    <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              5
-          </span>
-
-                        <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  Reborn
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
-                               </span>
-                    </li>
-
-                    <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              6
-          </span>
-
-                        <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  Kids See Ghosts
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
-                               </span>
-                    </li>
-
-                    <li className="tracklist__track ">
-          <span className="tracklist__track__num">
-              7
-          </span>
-
-                        <span className="tracklist__track__info">
-          <span className="tracklist__track__name name-container">
-            <span className="name">
-                  Cudi Montage
-                            </span>
-            <span className="badge explicit"></span>
-          </span>
-                                </span>
-                    </li>
+                            </li>
+                        })
+                    }
                 </ul>
 
                 <div className="tracklist__footer">

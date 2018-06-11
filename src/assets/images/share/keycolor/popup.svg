@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Asset/Embed/HUD/Popup</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Asset/Embed/HUD/Popup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M59.9997,63 L17.9997,63 C16.3437,63 14.9997,61.657 14.9997,60 L14.9997,38 C14.9997,36.343 16.3437,35 17.9997,35 L19.9997,35 L19.9997,29 L14.9997,29 C11.6867,29 8.9997,31.687 8.9997,35 L8.9997,63 C8.9997,66.313 11.6867,69 14.9997,69 L62.9997,69 C66.3137,69 68.9997,66.313 68.9997,63 L68.9997,60 L62.9997,60 C62.9997,61.657 61.6567,63 59.9997,63" id="Fill-1" fill-opacity="0.4" fill="#FF2D55"></path>
+        <path d="M74,51 C74,52.657 72.657,54 71,54 L29,54 C27.343,54 26,52.657 26,51 L26,29 C26,27.343 27.343,26 29,26 L71,26 C72.657,26 74,27.343 74,29 L74,51 Z M74,20 L26,20 C22.687,20 20,22.687 20,26 L20,54 C20,57.313 22.687,60 26,60 L74,60 C77.313,60 80,57.313 80,54 L80,26 C80,22.687 77.313,20 74,20 Z" id="Page-1" fill="#FF2D55"></path>
+    </g>
+</svg>

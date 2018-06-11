@@ -42,7 +42,7 @@ class AlbumDetail extends Component {
                                 <span></span>
                             </div>
                             <div id="player" style={{height: "450px", width: "660px"}}>
-                                <Player albumDetails={this.props.albumsProvider.albumDetails} />
+                                <Player albumsProvider={this.props.albumsProvider} />
                             </div>
                         </div>
                     </div>

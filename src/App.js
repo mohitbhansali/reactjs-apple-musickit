@@ -9,30 +9,9 @@ class AlbumsProvider {
     constructor(musicInstance) {
         this.musicInstance = musicInstance;
     }
-    action(action) {
-        switch (action) {
-            case "play":
-                this.musicInstance.play();
-                break;
-            case "pause":
-                this.musicInstance.pause();
-                break;
-            case "stop":
-                this.musicInstance.stop();
-                break;
-            case "next":
-                this.musicInstance.playNext();
-                break;
-            case "previous":
-                this.musicInstance.playLater();
-                break;
-            default:
-                break;
-        }
-    }
     *fetchAlbums() {
         this.albums = yield this.musicInstance.api.library.albums("",{});
-        console.log(this.albums);
+        //console.log(this.albums);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
                 func.call()
@@ -42,7 +21,7 @@ class AlbumsProvider {
 
     *fetchAlbumDetails(id) {
         this.albumDetails = yield this.musicInstance.api.library.album(id);
-        console.log(this.albumDetails);
+        //console.log(this.albumDetails);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
                 func.call()
