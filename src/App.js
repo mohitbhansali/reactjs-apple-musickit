@@ -10,7 +10,10 @@ class AlbumsProvider {
         this.musicInstance = musicInstance;
     }
     *fetchAlbums() {
-        this.albums = yield this.musicInstance.api.library.albums("",{});
+        this.albums = [];
+        if(this.musicInstance.api.library) {
+            this.albums = yield this.musicInstance.api.library.albums("",{});
+        }
         console.log(this.albums);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
@@ -20,7 +23,10 @@ class AlbumsProvider {
     }
 
     *fetchAlbumDetails(id) {
-        this.albumDetails = yield this.musicInstance.api.library.album(id);
+        this.albumDetails = [];
+        if(this.musicInstance.api.library) {
+            this.albumDetails = yield this.musicInstance.api.library.album(id);
+        }
         console.log(this.albumDetails);
         if(this.callbacks){
             this.callbacks.forEach((func)=>{
@@ -42,6 +48,7 @@ class App extends Component {
         super(props);
         this.state = {genres:[], albums:[]};
         this.musicInstance = this.props.musicInstance;
+        this.signIn();
         //this.loadGenres();
         this.setupAlbumsProvider(this.musicInstance);
     }
@@ -63,10 +70,10 @@ class App extends Component {
         });
     }
     signIn() {
-        this.instance.authorize();
+        this.musicInstance.authorize();
     }
     signOut() {
-        this.instance.unauthorize();
+        this.musicInstance.unauthorize();
     }
     render() {
         return (

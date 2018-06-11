@@ -4,7 +4,6 @@
     <list default="true" id="44938733-a565-4cc6-9b62-be91d6948d3f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/albums/index.js" afterPath="$PROJECT_DIR$/src/pages/albums/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,9 +31,11 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="343">
+              <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -441,12 +442,12 @@
       <workItem from="1528651272362" duration="3987000" />
       <workItem from="1528683294657" duration="147000" />
       <workItem from="1528683508627" duration="8000" />
-      <workItem from="1528683638189" duration="28089000" />
+      <workItem from="1528683638189" duration="29339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34603000" />
+    <option name="totallyTimeSpent" value="35853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1107" extended-state="6" />
@@ -517,7 +518,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,15 +669,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/albums/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="149" lean-forward="false" selection-start-line="18" selection-start-column="149" selection-end-line="18" selection-end-column="149" />
+        <state relative-caret-position="510">
+          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="e#49#88#0" expanded="true" />
-            <element signature="e#3372#4075#0" expanded="false" />
-            <element signature="e#4089#4492#0" expanded="false" />
+            <element signature="e#370#1901#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -689,22 +690,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/albums/index.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+        <state relative-caret-position="270">
+          <caret line="18" column="149" lean-forward="false" selection-start-line="18" selection-start-column="149" selection-end-line="18" selection-end-column="149" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="e#49#88#0" expanded="true" />
-            <element signature="e#370#1901#0" expanded="false" />
+            <element signature="e#3372#4075#0" expanded="false" />
+            <element signature="e#4089#4492#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="343">
+          <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
