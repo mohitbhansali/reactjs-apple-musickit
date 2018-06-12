@@ -3,10 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-selector:-webkit-full-screen {
-  display: block;
-}
-
-selector {
-  display: none;
+:-webkit-full-screen {
+    background-color: white;
+    z-index: 2147483647;
 }
