@@ -66,7 +66,7 @@ class Player extends Component {
                         this.musicInstance.stop();
                     }
                     this.musicInstance.play();
-                    this.startTimer();
+                    //this.startTimer();
                     this.setState({
                         isPlaying: true,
                         timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining
@@ -74,12 +74,12 @@ class Player extends Component {
                     break;
                 case "pause":
                     this.musicInstance.pause();
-                    this.stopTimer();
+                    //this.stopTimer();
                     this.setState({isPlaying: false});
                     break;
                 case "stop":
                     this.musicInstance.stop();
-                    this.stopTimer();
+                    //this.stopTimer();
                     this.setState({isPlaying: false});
                     break;
                 case "next":
@@ -88,7 +88,7 @@ class Player extends Component {
                         this.musicInstance.stop();
                     }
                     this.musicInstance.play();
-                    this.startTimer();
+                    //this.startTimer();
                     this.setState({isPlaying: true, timeRemaining: this.musicInstance.player.currentPlaybackTimeRemaining});
                     break;
                 case "previous":
