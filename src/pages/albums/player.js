@@ -183,7 +183,7 @@ class Player extends Component {
                             return <li key={index} className="tracklist__track" onClick={this.setQueue.bind(this, track)}>
                                 {
                                     this.musicInstance.player.nowPlayingItemIndex === index &&
-                                    <div className={"bars " + (this.state.isPlaying ? 'dance' : 'no-dance')}>
+                                    <div className={"bars " + (this.state.isPlaying && this.musicInstance.player.currentBufferedProgress > 0 ? 'dance' : 'no-dance')}>
                                         <div className="bar one"></div>
                                         <div className="bar two"></div>
                                         <div className="bar three"></div>
