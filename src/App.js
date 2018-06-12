@@ -46,7 +46,7 @@ class App extends Component {
         super(props);
         this.state = {isLogin: false, genres:[], albums:[]};
         this.musicInstance = this.props.musicInstance;
-        //this.loadGenres();
+        //this.signIn();
         this.setupAlbumsProvider(this.musicInstance);
     }
     componentWillMount() {
@@ -72,16 +72,20 @@ class App extends Component {
         });
     }
     signIn() {
-        this.musicInstance.authorize((key) => {
-            console.log(key);
+        let that = this;
+        co(function*() {
+            let key  = yield that.musicInstance.authorize();
             if(key) {
-                this.setState({isLogin: true});
+                that.setState({isLogin: true});
             }
         });
     }
     signOut() {
-        this.musicInstance.unauthorize(() => {
-            this.setState({isLogin: false});
+        let that = this;
+        co(function*() {
+            let status = that.musicInstance.unauthorize();
+            console.log(status);
+            that.setState({isLogin: false});
         });
     }
     render() {
