@@ -1,3 +1,7 @@
+:-webkit-full-screen {
+    background-color: white;
+    z-index: 2147483647;
+}
 body {
     min-height: 100%;
     display: -webkit-box;
