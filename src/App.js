@@ -76,7 +76,7 @@ class App extends Component {
     signOut() {
         let that = this;
         co(function*() {
-            let status = that.musicInstance.unauthorize();
+            let status = yield that.musicInstance.unauthorize();
             console.log(status);
             that.setState({isLogin: false});
         });
