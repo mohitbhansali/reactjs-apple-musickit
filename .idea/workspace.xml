@@ -87,8 +87,8 @@
       <file leaf-file-name="player.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="185" column="140" lean-forward="false" selection-start-line="185" selection-start-column="140" selection-end-line="185" selection-end-column="140" />
+            <state relative-caret-position="145">
+              <caret line="108" column="117" lean-forward="false" selection-start-line="108" selection-start-column="117" selection-end-line="108" selection-end-column="117" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#49#88#0" expanded="true" />
@@ -471,12 +471,12 @@
       <workItem from="1528651272362" duration="3987000" />
       <workItem from="1528683294657" duration="147000" />
       <workItem from="1528683508627" duration="8000" />
-      <workItem from="1528683638189" duration="57651000" />
+      <workItem from="1528683638189" duration="57751000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64165000" />
+    <option name="totallyTimeSpent" value="64265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1107" extended-state="6" />
@@ -738,8 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/albums/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="185" column="140" lean-forward="false" selection-start-line="185" selection-start-column="140" selection-end-line="185" selection-end-column="140" />
+        <state relative-caret-position="145">
+          <caret line="108" column="117" lean-forward="false" selection-start-line="108" selection-start-column="117" selection-end-line="108" selection-end-column="117" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#49#88#0" expanded="true" />
