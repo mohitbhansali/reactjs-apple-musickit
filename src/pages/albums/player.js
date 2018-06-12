@@ -106,7 +106,7 @@ class Player extends Component {
         artworkUrl = artworkUrl.replace("{w}",500);
         artworkUrl = artworkUrl.replace("{h}",500);
         return <div className="embed-player">
-            <div className={"song + (this.state.isPlaying?'in-progress playing':'')}>
+            <div className={"song " + (this.state.isPlaying?'in-progress playing':'')}>
                 <div className="song__heading">
 
                 </div>
