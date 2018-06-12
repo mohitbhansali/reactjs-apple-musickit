@@ -119,15 +119,13 @@ class App extends Component {
                 <div className="ls-wrapper" id="toolboxWrapper">
                     <div className="container">
                         <div className="row intro">
-                            <a className="" href="/en-us">
-                                <h1 className="title">
-                                    Now on
-                                    Apple Music
-                                </h1>
-                                <p>
-                                    Apple Music is home to millions of songs, albums, playlists and music videos. Go deeper into the world of music with Beats 1, original shows, concerts and more.
-                                </p>
-                            </a>
+                            <h1 className="title">
+                                Now on
+                                Apple Music
+                            </h1>
+                            <p>
+                                Apple Music is home to millions of songs, albums, playlists and music videos. Go deeper into the world of music with Beats 1, original shows, concerts and more.
+                            </p>
                         </div>
                         <Router>
                             <Body isLogin={this.state.isLogin} albumsProvider={this.albumsProvider} />

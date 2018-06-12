@@ -28,6 +28,12 @@ class AlbumDetail extends Component {
                 <a className="details-back" href="/albums"><span className="appleicons">&#60;</span> Search</a>
             </div>
             {
+                !this.props.albumsProvider.albumDetails &&
+                <div id="searchLoading" className="loading-icon">
+                    <span></span>
+                </div>
+            }
+            {
                 this.props.albumsProvider.albumDetails &&
                     <div id="detailWrapper" className="album">
                         <div id="primary"></div>
@@ -37,10 +43,7 @@ class AlbumDetail extends Component {
                         </div>
 
                         <div id="embed">
-                            <div id="searchLoading" className="loading-icon" style={{display: "none"}}>
-                                <span></span>
-                            </div>
-                            <div id="player" style={{height: "450px", width: "660px"}}>
+                            <div id="player">
                                 <Player albumsProvider={this.props.albumsProvider} />
                             </div>
                         </div>

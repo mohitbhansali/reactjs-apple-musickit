@@ -105,12 +105,10 @@ class Player extends Component {
         let artworkUrl = this.albumProvider.albumDetails.attributes.artwork.url;
         artworkUrl = artworkUrl.replace("{w}",500);
         artworkUrl = artworkUrl.replace("{h}",500);
-        return <div id="app"><div className="embed-player">
-            <div className="song resting">
+        return <div className="embed-player">
+            <div className={"song " + (this.state.isPlaying?'in-progress playing':'')}>
                 <div className="song__heading">
-                    <button className="song__heading__logo">
-                        <span className="logo"></span>
-                    </button>
+
                 </div>
 
                 <div className="song__body">
@@ -213,10 +211,7 @@ class Player extends Component {
                 <div className="tracklist__upsell">
                     <div className="tracklist__upsell__logo"></div>
                 </div>
-
             </div>
-
-        </div>
         </div>
     }
 }

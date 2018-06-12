@@ -311,7 +311,88 @@ p {
     float: left;
     color: #FE2851;
 }
+
+
+.loading-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 60px;
+    min-height: 30px;
+}
+#detailWrapper #embed #searchLoading {
+    position: absolute;
+    left: 47%;
+    height: initial;
+}
+#detailWrapper.album #embed #searchLoading, #detailWrapper.playlist #embed #searchLoading {
+    margin-top: 235px;
+}
+.loading-icon span {
+    display: block;
+    border-radius: 50%;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+}
 #player {
-    height: 450px;
+    height: 550px;
     width: 660px;
+}
+@media screen and (min-width: 340px) {
+    #player {
+        width: 100%;
+    }
+    .bubble-items {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+}
+@media (max-device-width: 750px) {
+    .ls-wrapper .container {
+        width: 100%;
+    }
+    .intro p {
+        margin: 15px;
+    }
+}
+@media screen and (min-width: 540px) {
+    .song__artwork .artwork-container .artwork {
+        width: 170px;
+        height: 170px;
+    }
+    .song__artwork .artwork-container {
+        width: 208px;
+        height: calc(170px + 14px);
+        padding-right: 12px;
+    }
+    .tracklist {
+        margin-left: calc(170px + 24px);
+    }
+}
+@-webkit-keyframes pulse{0%{box-shadow:0 0 0 0 #333333;height:0;width:0}70%{box-shadow:0 0 0 3px #FFFFFF;height:30px;width:30px}100%{box-shadow:0 0 0 0 #FFFFFF}}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #333333;
+        height: 0;
+        width: 0
+    }
+    70% {
+        box-shadow: 0 0 0 3px #FFFFFF;
+        height: 30px;
+        width: 30px
+    }
+    100% {
+        box-shadow: 0 0 0 0 #FFFFFF
+    }
 }
