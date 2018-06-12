@@ -51,7 +51,7 @@ class Player extends Component {
                 that.queue = yield that.musicInstance.setQueue({ playlist: that.playlistsProvider.playlistDetails.id });
                 that.setState({queueInitiated: true});
                 if(index) {
-                    this.queue.position = index;
+                    that.queue.position = index;
                 }
                 that.action('play');
             });
