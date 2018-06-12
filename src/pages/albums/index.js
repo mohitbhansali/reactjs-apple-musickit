@@ -3,6 +3,7 @@
  */
 import React, {Component} from "react";
 import {Route} from "react-router-dom";
+import co from 'co';
 //import explicit from '../../assets/explicit.png';
 
 
@@ -10,6 +11,10 @@ class Albums extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+        let that = this;
+        co(function *() {
+            yield that.albumsProvider.fetchAlbums();
+        });
     }
 
     render() {

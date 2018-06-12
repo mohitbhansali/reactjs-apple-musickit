@@ -59,10 +59,10 @@ class App extends Component {
         this.albumsProvider.onLoad(()=>{
             this.setState({});
         });
-        let that = this;
+        /*let that = this;
         co(function *() {
             yield that.albumsProvider.fetchAlbums();
-        });
+        });*/
     }
     signIn() {
         let that = this;
