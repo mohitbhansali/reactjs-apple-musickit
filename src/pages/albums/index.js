@@ -13,7 +13,7 @@ class Albums extends Component {
         this.state = {};
         let that = this;
         co(function *() {
-            yield that.albumsProvider.fetchAlbums();
+            yield that.props.albumsProvider.fetchAlbums();
         });
     }
 
