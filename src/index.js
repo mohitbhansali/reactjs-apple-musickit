@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MusicProvider from './core/MusicProvider';
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
 
 let musicProvider = MusicProvider.sharedProvider();
 musicProvider.configure();
 let musicInstance = musicProvider.getMusicInstance();
 
 ReactDOM.render(<App musicInstance={musicInstance} />, document.getElementById('root'));
-registerServiceWorker();
+//registerServiceWorker();
