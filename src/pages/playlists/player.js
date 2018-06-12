@@ -9,8 +9,8 @@ class Player extends Component {
     constructor(props) {
         super(props);
         this.state = {isPlaying: false, count: 0, timeRemaining: 0, queueInitiated: false};
-        this.albumProvider = this.props.albumsProvider;
-        this.musicInstance = this.albumProvider.musicInstance;
+        this.playlistsProvider = this.props.playlistsProvider;
+        this.musicInstance = this.playlistsProvider.musicInstance;
         //console.log("Props",this.musicInstance);
     }
 
@@ -48,7 +48,7 @@ class Player extends Component {
         } else {
             let that = this;
             co(function*() {
-                that.queue = yield that.musicInstance.setQueue({ album: that.albumProvider.albumDetails.id });
+                that.queue = yield that.musicInstance.setQueue({ playlist: that.playlistsProvider.playlistDetails.id });
                 that.setState({queueInitiated: true});
                 if(index) {
                     this.queue.position = index;
@@ -102,7 +102,7 @@ class Player extends Component {
     }
 
     render() {
-        let artworkUrl = this.albumProvider.albumDetails.attributes.artwork.url;
+        let artworkUrl = this.playlistsProvider.playlistDetails.attributes.artwork.url;
         artworkUrl = artworkUrl.replace("{w}",500);
         artworkUrl = artworkUrl.replace("{h}",500);
         return <div className="embed-player">
@@ -118,16 +118,16 @@ class Player extends Component {
                             <img className="artwork shadow" src={artworkUrl} alt="artwork shadow" />
                         </div>
                         <div className="song__count">
-                            {this.albumProvider.albumDetails.relationships.tracks.data.length} Songs
+                            {this.playlistsProvider.playlistDetails.relationships.tracks.data.length} Songs
                         </div>
                     </div>
                     <div className="song__lcd">
                         <div className="song__info">
                             <div className="song__info__name name-container">
-                                <span className="name">{this.state.nowPlayingItem?this.state.nowPlayingItem.attributes.name:this.albumProvider.albumDetails.attributes.name}</span>
+                                <span className="name">{this.state.nowPlayingItem?this.state.nowPlayingItem.attributes.name:this.playlistsProvider.playlistDetails.attributes.name}</span>
                             </div>
-                            <div className="song__info__sub" title={this.albumProvider.albumDetails.attributes.artistName}>
-                                <span>{this.state.nowPlayingItem?this.state.nowPlayingItem.albumInfo:this.albumProvider.albumDetails.attributes.artistName}</span>
+                            <div className="song__info__sub" title={this.playlistsProvider.playlistDetails.attributes.artistName}>
+                                <span>{this.state.nowPlayingItem?this.state.nowPlayingItem.albumInfo:this.playlistsProvider.playlistDetails.attributes.artistName}</span>
                             </div>
                         </div>
 
@@ -177,8 +177,8 @@ class Player extends Component {
                 <div className="tracklist__border"></div>
                 <ul className="tracklist__tracks">
                     {
-                        this.albumProvider.albumDetails.relationships &&
-                        this.albumProvider.albumDetails.relationships.tracks.data.map((track, index)=>{
+                        this.playlistsProvider.playlistDetails.relationships &&
+                        this.playlistsProvider.playlistDetails.relationships.tracks.data.map((track, index)=>{
                             //console.log(track);
                             return <li key={index} className="tracklist__track" onClick={this.setQueue.bind(this, index)}>
                                 {

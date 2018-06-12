@@ -11,7 +11,7 @@ class AlbumsProvider {
     }
     *fetchAlbums() {
         if(this.musicInstance.api.library) {
-            this.albums = yield this.musicInstance.api.library.albums("",{});
+            this.albums = yield this.musicInstance.api.library.albums();
             //console.log(this.albums);
             if(this.callbacks){
                 this.callbacks.forEach((func)=>{
@@ -41,6 +41,41 @@ class AlbumsProvider {
     }
 }
 
+class PlaylistsProvider {
+    constructor(musicInstance) {
+        this.musicInstance = musicInstance;
+    }
+
+    *fetchPlaylists() {
+        if(this.musicInstance.api.library) {
+            this.playlists = yield this.musicInstance.api.library.playlists();
+            if(this.callbacks){
+                this.callbacks.forEach((func)=>{
+                    func.call()
+                });
+            }
+        }
+    }
+
+    *fetchPlaylistDetails(id) {
+        if(this.musicInstance.api.library) {
+            this.playlistDetails = yield this.musicInstance.api.library.playlist(id);
+            if(this.callbacks){
+                this.callbacks.forEach((func)=>{
+                    func.call()
+                });
+            }
+        }
+    }
+
+    onLoad(func) {
+        if(!this.callbacks){
+            this.callbacks = [];
+        }
+        this.callbacks.push(func);
+    }
+}
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -48,6 +83,7 @@ class App extends Component {
         this.musicInstance = this.props.musicInstance;
         //this.signIn();
         this.setupAlbumsProvider(this.musicInstance);
+        this.setupPlaylistsProvider(this.musicInstance);
     }
     componentWillMount() {
         if(this.musicInstance.isAuthorized) {
@@ -59,10 +95,12 @@ class App extends Component {
         this.albumsProvider.onLoad(()=>{
             this.setState({});
         });
-        /*let that = this;
-        co(function *() {
-            yield that.albumsProvider.fetchAlbums();
-        });*/
+    }
+    setupPlaylistsProvider() {
+        this.playlistsProvider = new PlaylistsProvider(this.musicInstance);
+        this.playlistsProvider.onLoad(()=>{
+            this.setState({});
+        });
     }
     signIn() {
         let that = this;
@@ -125,7 +163,10 @@ class App extends Component {
                             </p>
                         </div>
                         <Router>
-                            <Body isLogin={this.state.isLogin} albumsProvider={this.albumsProvider} />
+                            <Body isLogin={this.state.isLogin}
+                                  albumsProvider={this.albumsProvider}
+                                  playlistsProvider={this.playlistsProvider}
+                            />
                         </Router>
                     </div>
                 </div>
