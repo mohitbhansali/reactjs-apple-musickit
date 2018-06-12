@@ -15,7 +15,7 @@ class Albums extends Component {
     render() {
         return <div className="content-wrapper">
             {
-                !this.props.albumsProvider.albums &&
+                !this.props.albumsProvider.albums && window.location.pathname === '/' &&
                 <div ref="searchLoading" className="loading-icon">
                     <span></span>
                 </div>

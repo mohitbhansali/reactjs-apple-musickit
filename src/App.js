@@ -54,13 +54,6 @@ class App extends Component {
             this.setState({isLogin: true});
         }
     }
-    loadGenres() {
-        let that = this;
-        co(function*() {
-            let genres = yield that.instance.api.genres();
-            that.setState({genres: genres})
-        });
-    }
     setupAlbumsProvider() {
         this.albumsProvider = new AlbumsProvider(this.musicInstance);
         this.albumsProvider.onLoad(()=>{
