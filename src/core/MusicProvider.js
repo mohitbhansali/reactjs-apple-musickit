@@ -21,7 +21,7 @@ export default class MusicProvider {
         });
     }
 
-    getInstance() {
+    getMusicInstance() {
         return window.MusicKit.getInstance();
     }
 }
